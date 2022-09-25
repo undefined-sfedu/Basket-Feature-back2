@@ -13,4 +13,4 @@
 
 Если проект был запущен локально, то к документацию можно получить из браузера: `localhost:8000/docs`
 
-Если нужна документация без запуска сервера - обращаться к разработчику
+![img](https://sun9-east.userapi.com/sun9-32/s/v1/ig2/tDeBXeGPbZUv0eiEEuugyl92RDdtX9ueNDgx7JYE7uO63FE29UuZsHzCiHBCnIArzSRVbJ2lC99ZwzbUnsBf1JX3.jpg?size=492x223&quality=96&type=album)
