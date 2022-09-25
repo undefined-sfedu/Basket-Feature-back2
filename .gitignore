@@ -115,3 +115,5 @@ fabric.properties
 .idea/**/azureSettings.xml
 .idea
 # End of https://www.toptal.com/developers/gitignore/api/pycharm
+/app/constants.py
+**/__pycache__/*
