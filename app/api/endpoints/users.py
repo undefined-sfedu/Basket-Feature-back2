@@ -3,18 +3,9 @@ import hashlib
 from fastapi import Depends, HTTPException, APIRouter
 from app.core import crud, schemas
 from sqlalchemy.orm import Session
-from app.core.database import SessionLocal
+from app.core.dependencies import get_db
 
 router = APIRouter(prefix="/users", tags=["users"])
-
-
-# Dependency
-def get_db():
-    db = SessionLocal()
-    try:
-        yield db
-    finally:
-        db.close()
 
 
 @router.post("/create", response_model=schemas.User)
