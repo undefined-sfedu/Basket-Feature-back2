@@ -31,7 +31,7 @@ def read_users(skip: int = 0, limit: int = 100, db: Session = Depends(get_db)):
     return users
 
 
-@router.get("/find_by_id/{user_id}", response_model=schemas.User)
+@router.get("/{user_id}", response_model=schemas.User)
 def read_user(user_id: int, db: Session = Depends(get_db)):
     db_user = crud.get_user(db, user_id=user_id)
     if db_user is None:
@@ -39,7 +39,7 @@ def read_user(user_id: int, db: Session = Depends(get_db)):
     return db_user
 
 
-@router.get("/find_by_email/{user_email}", response_model=schemas.User)
+@router.get("/{user_email}", response_model=schemas.User)
 def read_user_by_email(user_email: str, db: Session = Depends(get_db)):
     db_user = crud.get_user_by_email(db, email=user_email)
     if db_user is None:
