@@ -49,3 +49,10 @@ def auth_user(email: str, password: str, db: Session = Depends(get_db)):
         raise HTTPException(status_code=401, detail="Wrong password")
 
     return db_user
+
+
+@user_router.post("/{user_id}/teams/", response_model=schemas.Team)
+def create_team_for_user(
+    user_id: int, team: schemas.TeamCreate, db: Session = Depends(get_db)
+):
+    return crud.create_user_team(db=db, team=team, user_id=user_id)
