@@ -25,3 +25,15 @@ def create_user(db: Session, user: schemas.UserCreate):
     db.commit()
     db.refresh(db_user)
     return db_user
+
+
+def get_teams(db: Session, skip: int = 0, limit: int = 100):
+    return db.query(models.Team).offset(skip).limit(limit).all()
+
+
+def create_user_team(db: Session, team: schemas.TeamCreate, user_id: int):
+    db_team = models.Team(**team.dict(), user_id=user_id)
+    db.add(db_team)
+    db.commit()
+    db.refresh(db_team)
+    return db_team
