@@ -56,3 +56,8 @@ def create_team_for_user(
     user_id: int, team: schemas.TeamCreate, db: Session = Depends(get_db)
 ):
     return crud.create_user_team(db=db, team=team, user_id=user_id)
+
+
+@user_router.get("/{user_id}", response_model=list[schemas.Team])
+def get_user_teams(user_id: int, db: Session = Depends(get_db)):
+    return crud.get_user(db, user_id).teams
