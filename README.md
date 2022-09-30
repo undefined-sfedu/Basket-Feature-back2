@@ -13,4 +13,4 @@
 
 Если проект был запущен локально, то к документацию можно получить из браузера: `localhost:8000/docs`
 
-![img](https://sun2.userapi.com/sun2-3/s/v1/ig2/6DAXNdgwN1UZWbPfi7adpFZMc2Y0nfYjXLf5-n3frEE5uUGETUdl5ba93JThA-vNeT8CDD3HMib2MDrvqxbnSi7O.jpg?size=616x657&quality=96&type=album)
+![img](https://sun9-east.userapi.com/sun9-33/s/v1/ig2/Q7GCx6HN0H3YH9U2LJ2vekCTGvAZ5XvQa-UzhdjXYbZ7Z1DfXoGumZqOI3LehsLFeK0aUVlWZhur_MSFhBm_pMPV.jpg?size=641x855&quality=96&type=album)
