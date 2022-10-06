@@ -1,11 +1,11 @@
-from app.core import models
+from app.core.database import Base
 from app.core.database import engine
 from fastapi import FastAPI
 from app.api.endpoints.users import user_router
 from app.api.endpoints.teams import team_router
 from app.api.endpoints.players import player_router
 
-models.Base.metadata.create_all(bind=engine)
+Base.metadata.create_all(bind=engine)
 
 app = FastAPI()
 
