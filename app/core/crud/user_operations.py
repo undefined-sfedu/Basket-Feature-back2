@@ -19,7 +19,14 @@ def get_users(db: Session, skip: int = 0, limit: int = 100):
 def create_user(db: Session, user: UserCreate):
     hashed_password = hashlib.sha256(user.password.encode()).hexdigest()
 
-    db_user = User(email=user.email, pass_hash=hashed_password)
+    db_user = User(
+        email=user.email,
+        pass_hash=hashed_password,
+        first_name=user.first_name,
+        last_name=user.last_name,
+        middle_name=user.middle_name
+    )
+
     db.add(db_user)
     db.commit()
     db.refresh(db_user)
