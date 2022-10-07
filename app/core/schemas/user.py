@@ -5,6 +5,9 @@ from app.core.schemas.team import Team
 
 class UserBase(BaseModel):
     email: str
+    first_name: str | None = None
+    last_name: str | None = None
+    middle_name: str | None = None
 
 
 class UserCreate(UserBase):
@@ -13,9 +16,6 @@ class UserCreate(UserBase):
 
 class User(UserBase):
     id: int
-    first_name: str | None
-    last_name: str | None
-    middle_name: str | None
     teams: list[Team] = []
 
     class Config:
