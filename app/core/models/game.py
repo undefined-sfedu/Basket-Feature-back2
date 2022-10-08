@@ -13,5 +13,5 @@ class Game(Base):
     user_id = Column(Integer, ForeignKey("users.id"))
 
     user = relationship("User", back_populates="games")
-    team_a = relationship("Team", back_populates="games")
-    team_b = relationship("Team", back_populates="games")
+    team_a = relationship("Team", foreign_keys=[team_a_id])
+    team_b = relationship("Team", foreign_keys=[team_b_id])

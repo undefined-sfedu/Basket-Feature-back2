@@ -14,3 +14,4 @@ class User(Base):
     middle_name = Column(String)
 
     teams = relationship("Team", back_populates="user")
+    games = relationship("Game", back_populates="user")
