@@ -7,11 +7,11 @@ class ActivePlayer(Base):
     __tablename__ = "active_players"
 
     id = Column(Integer, primary_key=True, index=True)
-    first_player = Column(Integer, nullable=False, ForeignKey("players.id"))
-    second_player = Column(Integer, nullable=False, ForeignKey("players.id"))
-    third_player = Column(Integer, nullable=False, ForeignKey("players.id"))
-    fourth_player = Column(Integer, nullable=False, ForeignKey("players.id"))
-    fifth_player = Column(Integer, nullable=False, ForeignKey("players.id"))
+    first_player = Column(Integer, ForeignKey("players.id"), nullable=False)
+    second_player = Column(Integer, ForeignKey("players.id"), nullable=False)
+    third_player = Column(Integer, ForeignKey("players.id"), nullable=False)
+    fourth_player = Column(Integer, ForeignKey("players.id"), nullable=False)
+    fifth_player = Column(Integer, ForeignKey("players.id"), nullable=False)
 
     player_1 = relationship("Player", foreign_keys=[first_player])
     player_2 = relationship("Player", foreign_keys=[second_player])
