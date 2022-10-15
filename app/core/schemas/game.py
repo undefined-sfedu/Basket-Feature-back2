@@ -2,12 +2,14 @@ from datetime import datetime
 
 from pydantic import BaseModel
 
+from app.core.schemas.active_players import ActivePlayers
 from app.core.schemas.team import Team
 
 
 class GameBase(BaseModel):
     team_a_id: int
     team_b_id: int
+    start_five_id: int
     date: datetime | None = None
 
 
@@ -21,6 +23,7 @@ class Game(GameBase):
 
     team_a: Team
     team_b: Team
+    start_five: ActivePlayers
 
     class Config:
         orm_mode = True
