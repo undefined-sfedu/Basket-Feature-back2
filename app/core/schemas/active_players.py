@@ -11,6 +11,10 @@ class ActivePlayersBase(BaseModel):
     fifth_player: int
 
 
+class ActivePlayersCreate(ActivePlayersBase):
+    pass
+
+
 class ActivePlayers(ActivePlayersBase):
     id: int
     players: list[Player] = []
