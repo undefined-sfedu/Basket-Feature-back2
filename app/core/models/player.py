@@ -11,6 +11,6 @@ class Player(Base):
     first_name = Column(String)
     last_name = Column(String)
     middle_name = Column(String)
-    team_id = Column(Integer, ForeignKey("teams.id"))
+    team_id = Column(Integer, ForeignKey("teams.id"), nullable=False)
 
     team = relationship("Team", back_populates="players")
