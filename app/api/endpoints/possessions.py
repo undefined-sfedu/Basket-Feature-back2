@@ -16,6 +16,6 @@ def get_all_possessions(skip: int = 0, limit: int = 100, db: Session = Depends(g
     return get_all_possessions(db, skip=skip, limit=limit)
 
 
-@possessions_router.get("/{user_id}", response_model=PossessionsSchema)
+@possessions_router.get("/{possession_id}", response_model=PossessionsSchema)
 def get_possession_by_id(possession_id: int, db: Session = Depends(get_db)):
     return get_possession(db=db, possession_id=possession_id)
