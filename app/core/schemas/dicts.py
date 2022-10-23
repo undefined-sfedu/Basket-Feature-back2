@@ -10,11 +10,19 @@ class Dictionary(BaseModel):
         orm_mode = True
 
 
-class TimeTypeDict(Dictionary):
-    pass
+class TimeTypeDict(BaseModel):
+    id: int
+    time_type: str
+
+    class Config:
+        orm_mode = True
 
 
 class AttackTypes(Dictionary):
+    pass
+
+
+class StartAttackTypes(Dictionary):
     pass
 
 
@@ -31,4 +39,8 @@ class ResultTypes(Dictionary):
 
 
 class TimeTypes(Dictionary):
-    pass
+    id: int
+    time: str
+
+    class Config:
+        orm_mode = True
