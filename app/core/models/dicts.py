@@ -38,15 +38,15 @@ class ResultDict(Base):
     __tablename__ = 'result_dict'
 
     id = Column(SmallInteger, Identity(always=True, start=1, increment=1, minvalue=1, maxvalue=32767, cycle=False, cache=1), primary_key=True)
-    result = Column(CHAR(1), nullable=False)
-    res_string = Column(CHAR(15), server_default=text('NULL::bpchar'))
+    abbreviate = Column(CHAR(1), nullable=False)
+    description = Column(CHAR(15), server_default=text('NULL::bpchar'))
 
 
 class StartAttackDict(Base):
     __tablename__ = 'start_attack_dict'
 
     id = Column(SmallInteger, Identity(always=True, start=1, increment=1, minvalue=1, maxvalue=32767, cycle=False, cache=1), primary_key=True)
-    start_attack_type = Column(String(5), nullable=False)
+    abbreviate = Column(String(5), nullable=False)
     description = Column(String(40))
 
     actions = relationship('Action', back_populates='start_attack_type')
