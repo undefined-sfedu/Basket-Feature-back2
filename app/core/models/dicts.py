@@ -11,7 +11,7 @@ class AttackTypes(Base):
     abbreviate = Column(CHAR(2), nullable=False)
     description = Column(String(40), server_default=text('NULL::character varying'))
 
-    actions = relationship('Actions', back_populates='attack_type')
+    actions = relationship('Action', back_populates='attack_type')
 
 
 class FaulTypes(Base):
@@ -21,17 +21,7 @@ class FaulTypes(Base):
     abbreviate = Column(CHAR(2), nullable=False)
     description = Column(String(30), server_default=text('NULL::character varying'))
 
-    fauls = relationship('Fauls', back_populates='faul_type')
-
-
-class LossDict(Base):
-    __tablename__ = 'loss_dict'
-
-    id = Column(Integer, Identity(always=True, start=1, increment=1, minvalue=1, maxvalue=2147483647, cycle=False, cache=1), primary_key=True)
-    abbreviate = Column(CHAR(3), nullable=False)
-    description = Column(String(30), server_default=text('NULL::character varying'))
-
-    actions = relationship('Actions', back_populates='loss')
+    fauls = relationship('Faul', back_populates='faul_type')
 
 
 class PlayTypeDict(Base):
@@ -41,7 +31,7 @@ class PlayTypeDict(Base):
     abbreviate = Column(CHAR(3), nullable=False)
     description = Column(String(40), server_default=text('NULL::character varying'))
 
-    throws = relationship('Throws', back_populates='play_type')
+    throws = relationship('Throw', back_populates='play_type')
 
 
 class ResultDict(Base):
@@ -51,9 +41,6 @@ class ResultDict(Base):
     result = Column(CHAR(1), nullable=False)
     res_string = Column(CHAR(15), server_default=text('NULL::bpchar'))
 
-    throws = relationship('Throws', back_populates='result')
-    tech_fouls = relationship('TechFouls', back_populates='result_dict')
-
 
 class StartAttackDict(Base):
     __tablename__ = 'start_attack_dict'
@@ -62,7 +49,7 @@ class StartAttackDict(Base):
     start_attack_type = Column(String(5), nullable=False)
     description = Column(String(40))
 
-    actions = relationship('Actions', back_populates='start_attack_type')
+    actions = relationship('Action', back_populates='start_attack_type')
 
 
 class TimeDict(Base):
@@ -71,7 +58,7 @@ class TimeDict(Base):
     id = Column(Integer, Identity(always=True, start=1, increment=1, minvalue=1, maxvalue=2147483647, cycle=False, cache=1), primary_key=True)
     time = Column(String(2), nullable=False)
 
-    actions = relationship('Actions', back_populates='time')
+    actions = relationship('Action', back_populates='time')
 
 
 class TimeTypeDict(Base):
@@ -80,4 +67,4 @@ class TimeTypeDict(Base):
     id = Column(SmallInteger, Identity(always=True, start=1, increment=1, minvalue=1, maxvalue=32767, cycle=False, cache=1), primary_key=True)
     time_type = Column(INT4RANGE, nullable=False)
 
-    actions = relationship('Actions', back_populates='time_type')
+    actions = relationship('Action', back_populates='time_type')
