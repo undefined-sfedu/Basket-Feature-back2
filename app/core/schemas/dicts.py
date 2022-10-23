@@ -6,6 +6,9 @@ class Dictionary(BaseModel):
     abbreviate: str
     description: str
 
+    class Config:
+        orm_mode = True
+
 
 class TimeTypeDict(Dictionary):
     pass
