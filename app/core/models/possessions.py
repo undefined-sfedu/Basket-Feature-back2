@@ -12,4 +12,4 @@ class Possessions(Base):
                 primary_key=True)
     players_array = Column(ARRAY(Integer()), nullable=False)
 
-    actions = relationship('Actions', back_populates='possession')
+    # actions = relationship('Actions', back_populates='possession')

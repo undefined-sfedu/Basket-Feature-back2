@@ -12,8 +12,8 @@ def create(possession: PossessionsCreate, db: Session = Depends(get_db)):
 
 
 @possessions_router.get("/get_all", response_model=list[PossessionsSchema])
-def get_all_possessions(skip: int = 0, limit: int = 100, db: Session = Depends(get_db)):
-    return get_all_possessions(db, skip=skip, limit=limit)
+def get_all(skip: int = 0, limit: int = 100, db: Session = Depends(get_db)):
+    return get_possessions(db=db, skip=skip, limit=limit)
 
 
 @possessions_router.get("/{possession_id}", response_model=PossessionsSchema)
