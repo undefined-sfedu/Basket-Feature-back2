@@ -8,9 +8,6 @@ from app.core.schemas.possessions import Possessions
 
 class ActionBase(BaseModel):
     seconds: int
-
-
-class ActionCreate(ActionBase):
     time_type_id: int
     time_id: int
     possession_id: int
@@ -20,6 +17,10 @@ class ActionCreate(ActionBase):
     throw_id: int | None = None
     loss_id: int | None = None
     faul_id: int | None = None
+
+
+class ActionCreate(ActionBase):
+    pass
 
 
 class Action(ActionBase):

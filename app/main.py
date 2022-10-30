@@ -1,3 +1,4 @@
+from app.api.endpoints.actions import actions_router
 from app.api.endpoints.games import games_router
 from app.core.database import Base
 from app.core.database import engine
@@ -29,3 +30,4 @@ app.include_router(player_router)
 app.include_router(games_router)
 app.include_router(active_players_router)
 app.include_router(possessions_router)
+app.include_router(actions_router)

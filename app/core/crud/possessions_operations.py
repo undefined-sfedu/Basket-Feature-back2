@@ -1,5 +1,5 @@
 from sqlalchemy.orm import Session
-from app.core.models.possessions import Possessions
+from app.core.models import Possessions
 from app.core.schemas.possessions import PossessionsCreate
 
 
