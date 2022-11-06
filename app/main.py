@@ -1,5 +1,6 @@
 import uvicorn
 
+from app.api.endpoints.action_types import action_types_router
 from app.api.endpoints.actions import actions_router
 from app.api.endpoints.dicts import dicts_router
 from app.api.endpoints.games import games_router
@@ -33,6 +34,7 @@ app.include_router(player_router)
 app.include_router(games_router)
 app.include_router(active_players_router)
 app.include_router(possessions_router)
+app.include_router(action_types_router)
 app.include_router(actions_router)
 app.include_router(dicts_router)
 
