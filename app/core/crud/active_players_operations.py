@@ -1,5 +1,5 @@
 from sqlalchemy.orm import Session
-from app.core.models.active_players import ActivePlayers
+from app.core.models import ActivePlayers
 from app.core.schemas.active_players import ActivePlayersCreate
 
 

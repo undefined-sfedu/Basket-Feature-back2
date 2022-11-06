@@ -2,6 +2,7 @@ from datetime import datetime
 
 from pydantic import BaseModel
 
+from app.core.schemas.action import Action
 from app.core.schemas.active_players import ActivePlayers
 from app.core.schemas.team import Team
 
@@ -24,6 +25,8 @@ class Game(GameBase):
     team_a: Team
     team_b: Team
     start_five: ActivePlayers
+
+    actions: list[Action] = []
 
     class Config:
         orm_mode = True
