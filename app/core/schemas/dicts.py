@@ -12,33 +12,33 @@ class Dictionary(BaseModel):
 
 class TimeTypeDict(BaseModel):
     id: int
-    time_type: str
+    time_type: int
 
     class Config:
         orm_mode = True
 
 
-class AttackTypes(Dictionary):
+class AttackType(Dictionary):
     pass
 
 
-class StartAttackTypes(Dictionary):
+class StartAttackType(Dictionary):
     pass
 
 
-class FaulTypes(Dictionary):
+class FaulType(Dictionary):
     pass
 
 
-class PlayTypes(Dictionary):
+class PlayType(Dictionary):
     pass
 
 
-class ResultTypes(Dictionary):
+class ResultType(Dictionary):
     pass
 
 
-class TimeTypes(Dictionary):
+class TimeType(BaseModel):
     id: int
     time: str
 

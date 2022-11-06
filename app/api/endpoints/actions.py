@@ -14,7 +14,8 @@ def create(action: ActionCreate, db: Session = Depends(get_db)):
 
 @actions_router.get("/get_all", response_model=list[ActionSchema])
 def get_all_actions(skip: int = 0, limit: int = 100, db: Session = Depends(get_db)):
-    return get_actions(db, skip=skip, limit=limit)
+    response = get_actions(db, skip=skip, limit=limit)
+    return response
 
 
 @actions_router.get("/{action_id}", response_model=ActionSchema)

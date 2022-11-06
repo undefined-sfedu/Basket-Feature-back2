@@ -1,7 +1,7 @@
 from pydantic import BaseModel
 
 from app.core.schemas.active_players import ActivePlayers
-from app.core.schemas.dicts import TimeTypes, TimeTypeDict, StartAttackTypes, AttackTypes
+from app.core.schemas.dicts import TimeType, TimeTypeDict, StartAttackType, AttackType
 from app.core.schemas.action_types import Faul, Throw, Loss
 from app.core.schemas.possessions import Possessions
 
@@ -26,13 +26,16 @@ class ActionCreate(ActionBase):
 class Action(ActionBase):
     id: int
 
-    time: TimeTypes
+    time: TimeType
     time_type: TimeTypeDict
     active_players: ActivePlayers
     possession: Possessions
-    start_attack_type: StartAttackTypes
-    attack_type: AttackTypes
+    start_attack_type: StartAttackType
+    attack_type: AttackType
 
     throw: Throw | None = None
     loss: Loss | None = None
     faul: Faul | None = None
+
+    class Config:
+        orm_mode = True

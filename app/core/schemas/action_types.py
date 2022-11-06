@@ -1,6 +1,6 @@
 from pydantic import BaseModel
 
-from app.core.schemas.dicts import PlayTypes, ResultTypes, FaulTypes, Dictionary
+from app.core.schemas.dicts import PlayType, ResultType, FaulType, Dictionary
 
 
 class ThrowCreate(BaseModel):
@@ -13,8 +13,8 @@ class ThrowCreate(BaseModel):
 class Throw(ThrowCreate):
     id: int
 
-    play_type: PlayTypes
-    result: ResultTypes
+    play_type: PlayType
+    result: ResultType
 
     class Config:
         orm_mode = True
@@ -28,7 +28,7 @@ class FaulCreate(BaseModel):
 class Faul(FaulCreate):
     id: int
 
-    faul_type: FaulTypes
+    faul_type: FaulType
 
     class Config:
         orm_mode = True
