@@ -7,7 +7,9 @@ from app.core.database import Base
 class AttackTypes(Base):
     __tablename__ = 'attack_types'
 
-    id = Column(SmallInteger, Identity(always=True, start=1, increment=1, minvalue=1, maxvalue=32767, cycle=False, cache=1), primary_key=True)
+    id = Column(SmallInteger,
+                Identity(always=True, start=1, increment=1, minvalue=1, maxvalue=32767, cycle=False, cache=1),
+                primary_key=True)
     abbreviate = Column(CHAR(2), nullable=False)
     description = Column(String(40), server_default=text('NULL::character varying'))
 
@@ -15,7 +17,9 @@ class AttackTypes(Base):
 class FaulTypes(Base):
     __tablename__ = 'faul_types'
 
-    id = Column(SmallInteger, Identity(always=True, start=1, increment=1, minvalue=1, maxvalue=32767, cycle=False, cache=1), primary_key=True)
+    id = Column(SmallInteger,
+                Identity(always=True, start=1, increment=1, minvalue=1, maxvalue=32767, cycle=False, cache=1),
+                primary_key=True)
     abbreviate = Column(CHAR(2), nullable=False)
     description = Column(String(30), server_default=text('NULL::character varying'))
 
@@ -23,7 +27,9 @@ class FaulTypes(Base):
 class LossDict(Base):
     __tablename__ = 'loss_dict'
 
-    id = Column(Integer, Identity(always=True, start=1, increment=1, minvalue=1, maxvalue=2147483647, cycle=False, cache=1), primary_key=True)
+    id = Column(Integer,
+                Identity(always=True, start=1, increment=1, minvalue=1, maxvalue=2147483647, cycle=False, cache=1),
+                primary_key=True)
     abbreviate = Column(CHAR(3), nullable=False)
     description = Column(String(30), server_default=text('NULL::character varying'))
 
@@ -31,7 +37,9 @@ class LossDict(Base):
 class PlayTypeDict(Base):
     __tablename__ = 'play_type_dict'
 
-    id = Column(SmallInteger, Identity(always=True, start=1, increment=1, minvalue=1, maxvalue=32767, cycle=False, cache=1), primary_key=True)
+    id = Column(SmallInteger,
+                Identity(always=True, start=1, increment=1, minvalue=1, maxvalue=32767, cycle=False, cache=1),
+                primary_key=True)
     abbreviate = Column(CHAR(3), nullable=False)
     description = Column(String(40), server_default=text('NULL::character varying'))
 
@@ -39,14 +47,18 @@ class PlayTypeDict(Base):
 class Possessions(Base):
     __tablename__ = 'possessions'
 
-    id = Column(Integer, Identity(always=True, start=1, increment=1, minvalue=1, maxvalue=2147483647, cycle=False, cache=1), primary_key=True)
+    id = Column(Integer,
+                Identity(always=True, start=1, increment=1, minvalue=1, maxvalue=2147483647, cycle=False, cache=1),
+                primary_key=True)
     players_array = Column(ARRAY(Integer()), nullable=False)
 
 
 class ResultDict(Base):
     __tablename__ = 'result_dict'
 
-    id = Column(SmallInteger, Identity(always=True, start=1, increment=1, minvalue=1, maxvalue=32767, cycle=False, cache=1), primary_key=True)
+    id = Column(SmallInteger,
+                Identity(always=True, start=1, increment=1, minvalue=1, maxvalue=32767, cycle=False, cache=1),
+                primary_key=True)
     abbreviate = Column(CHAR(1), nullable=False)
     description = Column(CHAR(15), server_default=text('NULL::bpchar'))
 
@@ -54,7 +66,9 @@ class ResultDict(Base):
 class StartAttackDict(Base):
     __tablename__ = 'start_attack_dict'
 
-    id = Column(SmallInteger, Identity(always=True, start=1, increment=1, minvalue=1, maxvalue=32767, cycle=False, cache=1), primary_key=True)
+    id = Column(SmallInteger,
+                Identity(always=True, start=1, increment=1, minvalue=1, maxvalue=32767, cycle=False, cache=1),
+                primary_key=True)
     abbreviate = Column(String(5), nullable=False)
     description = Column(String(40))
 
@@ -62,21 +76,27 @@ class StartAttackDict(Base):
 class TimeDict(Base):
     __tablename__ = 'time_dict'
 
-    id = Column(Integer, Identity(always=True, start=1, increment=1, minvalue=1, maxvalue=2147483647, cycle=False, cache=1), primary_key=True)
+    id = Column(Integer,
+                Identity(always=True, start=1, increment=1, minvalue=1, maxvalue=2147483647, cycle=False, cache=1),
+                primary_key=True)
     time = Column(String(2), nullable=False)
 
 
 class TimeTypeDict(Base):
     __tablename__ = 'time_type_dict'
 
-    id = Column(SmallInteger, Identity(always=True, start=1, increment=1, minvalue=1, maxvalue=32767, cycle=False, cache=1), primary_key=True)
+    id = Column(SmallInteger,
+                Identity(always=True, start=1, increment=1, minvalue=1, maxvalue=32767, cycle=False, cache=1),
+                primary_key=True)
     time_type = Column(INT4RANGE, nullable=False)
 
 
 class Users(Base):
     __tablename__ = 'users'
 
-    id = Column(Integer, Identity(always=True, start=1, increment=1, minvalue=1, maxvalue=2147483647, cycle=False, cache=1), primary_key=True)
+    id = Column(Integer,
+                Identity(always=True, start=1, increment=1, minvalue=1, maxvalue=2147483647, cycle=False, cache=1),
+                primary_key=True)
     email = Column(String(64), nullable=False)
     pass_hash = Column(CHAR(64), nullable=False)
     first_name = Column(String(30))
@@ -90,7 +110,9 @@ class Users(Base):
 class Fauls(Base):
     __tablename__ = 'fauls'
 
-    id = Column(Integer, Identity(always=True, start=1, increment=1, minvalue=1, maxvalue=2147483647, cycle=False, cache=1), primary_key=True)
+    id = Column(Integer,
+                Identity(always=True, start=1, increment=1, minvalue=1, maxvalue=2147483647, cycle=False, cache=1),
+                primary_key=True)
     faul_type_id = Column(ForeignKey('faul_types.id'), nullable=False)
     scored = Column(SmallInteger, nullable=False, server_default=text('0'))
 
@@ -100,7 +122,9 @@ class Fauls(Base):
 class Teams(Base):
     __tablename__ = 'teams'
 
-    id = Column(Integer, Identity(always=True, start=1, increment=1, minvalue=1, maxvalue=2147483647, cycle=False, cache=1), primary_key=True)
+    id = Column(Integer,
+                Identity(always=True, start=1, increment=1, minvalue=1, maxvalue=2147483647, cycle=False, cache=1),
+                primary_key=True)
     name = Column(String(100), nullable=False)
     user_id = Column(ForeignKey('users.id'))
 
@@ -111,7 +135,9 @@ class Teams(Base):
 class Throws(Base):
     __tablename__ = 'throws'
 
-    id = Column(Integer, Identity(always=True, start=1, increment=1, minvalue=1, maxvalue=2147483647, cycle=False, cache=1), primary_key=True)
+    id = Column(Integer,
+                Identity(always=True, start=1, increment=1, minvalue=1, maxvalue=2147483647, cycle=False, cache=1),
+                primary_key=True)
     play_type_id = Column(ForeignKey('play_type_dict.id'), nullable=False)
     zone = Column(SmallInteger, nullable=False)
     result_id = Column(ForeignKey('result_dict.id'), nullable=False)
@@ -124,7 +150,9 @@ class Throws(Base):
 class Players(Base):
     __tablename__ = 'players'
 
-    id = Column(Integer, Identity(always=True, start=1, increment=1, minvalue=1, maxvalue=2147483647, cycle=False, cache=1), primary_key=True)
+    id = Column(Integer,
+                Identity(always=True, start=1, increment=1, minvalue=1, maxvalue=2147483647, cycle=False, cache=1),
+                primary_key=True)
     number = Column(SmallInteger, nullable=False, server_default=text('1'))
     team_id = Column(ForeignKey('teams.id'), nullable=False)
     first_name = Column(String(30))
@@ -137,7 +165,9 @@ class Players(Base):
 class ActivePlayers(Base):
     __tablename__ = 'active_players'
 
-    id = Column(Integer, Identity(always=True, start=1, increment=1, minvalue=1, maxvalue=2147483647, cycle=False, cache=1), primary_key=True)
+    id = Column(Integer,
+                Identity(always=True, start=1, increment=1, minvalue=1, maxvalue=2147483647, cycle=False, cache=1),
+                primary_key=True)
     first_player_id = Column(ForeignKey('players.id'), nullable=False)
     second_player_id = Column(ForeignKey('players.id'), nullable=False)
     third_player_id = Column(ForeignKey('players.id'), nullable=False)
@@ -154,7 +184,9 @@ class ActivePlayers(Base):
 class Actions(Base):
     __tablename__ = 'actions'
 
-    id = Column(Integer, Identity(always=True, start=1, increment=1, minvalue=1, maxvalue=2147483647, cycle=False, cache=1), primary_key=True)
+    id = Column(Integer,
+                Identity(always=True, start=1, increment=1, minvalue=1, maxvalue=2147483647, cycle=False, cache=1),
+                primary_key=True)
     time_type_id = Column(ForeignKey('time_type_dict.id'), nullable=False, server_default=text('1'))
     seconds = Column(SmallInteger, nullable=False)
     possession_id = Column(ForeignKey('possessions.id'), nullable=False)
@@ -165,6 +197,7 @@ class Actions(Base):
     throw_id = Column(ForeignKey('throws.id'))
     loss_id = Column(ForeignKey('loss_dict.id'))
     faul_id = Column(ForeignKey('fauls.id'))
+    game_id = Column(ForeignKey('games.id'))
 
     active_players = relationship('ActivePlayers')
     attack_type = relationship('AttackTypes')
@@ -180,7 +213,9 @@ class Actions(Base):
 class Games(Base):
     __tablename__ = 'games'
 
-    id = Column(Integer, Identity(always=True, start=1, increment=1, minvalue=1, maxvalue=2147483647, cycle=False, cache=1), primary_key=True)
+    id = Column(Integer,
+                Identity(always=True, start=1, increment=1, minvalue=1, maxvalue=2147483647, cycle=False, cache=1),
+                primary_key=True)
     team_a_id = Column(ForeignKey('teams.id'), nullable=False)
     team_b_id = Column(ForeignKey('teams.id'), nullable=False)
     user_id = Column(ForeignKey('users.id'), nullable=False)
@@ -191,4 +226,4 @@ class Games(Base):
     team_a = relationship('Teams', foreign_keys=[team_a_id])
     team_b = relationship('Teams', foreign_keys=[team_b_id])
     user = relationship('Users', back_populates='games')
-
+    actions = relationship('Actions')
