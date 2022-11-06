@@ -7,6 +7,7 @@ from app.core.schemas.possessions import Possessions
 
 
 class ActionBase(BaseModel):
+    game_id: int | None
     seconds: int
     time_type_id: int
     time_id: int
