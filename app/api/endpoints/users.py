@@ -3,10 +3,10 @@ import hashlib
 
 from sqlalchemy.orm import Session
 
-from app.core.crud.user_operations import get_user, get_users, get_user_by_email, create_user as db_create_user
-from app.core.schemas.user import User as UserSchema, UserCreate
-from app.core.schemas.team import Team as TeamSchema
-from app.core.dependencies import get_db
+from core.crud.user_operations import get_user, get_users, get_user_by_email, create_user as db_create_user
+from core.schemas.user import User as UserSchema, UserCreate
+from core.schemas.team import Team as TeamSchema
+from core.dependencies import get_db
 
 user_router = APIRouter(prefix="/users", tags=["users"])
 

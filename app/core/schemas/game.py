@@ -2,9 +2,9 @@ from datetime import datetime
 
 from pydantic import BaseModel
 
-from app.core.schemas.action import Action
-from app.core.schemas.active_players import ActivePlayers
-from app.core.schemas.team import Team
+from core.schemas.action import Action
+from core.schemas.active_players import ActivePlayers
+from core.schemas.team import Team
 
 
 class GameBase(BaseModel):

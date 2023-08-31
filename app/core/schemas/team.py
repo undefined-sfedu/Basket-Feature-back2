@@ -1,6 +1,6 @@
 from pydantic import BaseModel
 
-from app.core.schemas.player import Player
+from core.schemas.player import Player
 
 
 class TeamBase(BaseModel):

@@ -1,6 +1,6 @@
 from sqlalchemy.orm import Session
-from app.core.models import ActivePlayers
-from app.core.schemas.active_players import ActivePlayersCreate
+from core.models import ActivePlayers
+from core.schemas.active_players import ActivePlayersCreate
 
 
 def get_active_players(db: Session, active_players_id: int):

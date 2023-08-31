@@ -1,7 +1,7 @@
 from fastapi import Depends, APIRouter
-from app.core.crud.player_operations import *
-from app.core.schemas.player import Player as PlayerSchema
-from app.core.dependencies import get_db
+from core.crud.player_operations import *
+from core.schemas.player import Player as PlayerSchema
+from core.dependencies import get_db
 
 player_router = APIRouter(prefix="/players", tags=["players"])
 

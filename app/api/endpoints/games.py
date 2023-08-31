@@ -1,7 +1,7 @@
 from fastapi import Depends, APIRouter
-from app.core.crud.game_operations import *
-from app.core.schemas.game import Game as GameSchema
-from app.core.dependencies import get_db
+from core.crud.game_operations import *
+from core.schemas.game import Game as GameSchema
+from core.dependencies import get_db
 
 games_router = APIRouter(prefix="/games", tags=["games"])
 

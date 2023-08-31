@@ -1,9 +1,9 @@
 from pydantic import BaseModel
 
-from app.core.schemas.active_players import ActivePlayers
-from app.core.schemas.dicts import TimeType, TimeTypeDict, StartAttackType, AttackType
-from app.core.schemas.action_types import Faul, Throw, Loss
-from app.core.schemas.possessions import Possessions
+from core.schemas.active_players import ActivePlayers
+from core.schemas.dicts import TimeType, TimeTypeDict, StartAttackType, AttackType
+from core.schemas.action_types import Faul, Throw, Loss
+from core.schemas.possessions import Possessions
 
 
 class ActionBase(BaseModel):

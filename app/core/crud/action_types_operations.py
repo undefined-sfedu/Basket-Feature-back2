@@ -1,6 +1,6 @@
 from sqlalchemy.orm import Session
-from app.core.models import Throws, LossDict, Fauls
-from app.core.schemas.action_types import ThrowCreate, FaulCreate, Loss
+from core.models import Throws, LossDict, Fauls
+from core.schemas.action_types import ThrowCreate, FaulCreate, Loss
 
 
 def db_create_throw(db: Session, throw: ThrowCreate):

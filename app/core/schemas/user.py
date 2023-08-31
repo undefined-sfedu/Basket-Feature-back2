@@ -1,6 +1,6 @@
 from pydantic import BaseModel
 
-from app.core.schemas.team import Team
+from core.schemas.team import Team
 
 
 class UserBase(BaseModel):

@@ -1,6 +1,6 @@
 from sqlalchemy.orm import Session
-from app.core.models import Games
-from app.core.schemas.game import GameCreate
+from core.models import Games
+from core.schemas.game import GameCreate
 
 
 def get_games(db: Session, skip: int = 0, limit: int = 100):

@@ -1,10 +1,10 @@
 from fastapi import Depends, APIRouter
 from sqlalchemy.orm import Session
 
-from app.core.crud.active_players_operations import create_active_players as db_create_active_players
-from app.core.crud.active_players_operations import get_active_players as db_get_active_players
-from app.core.schemas.active_players import ActivePlayers as ActivePlayersSchema, ActivePlayersCreate
-from app.core.dependencies import get_db
+from core.crud.active_players_operations import create_active_players as db_create_active_players
+from core.crud.active_players_operations import get_active_players as db_get_active_players
+from core.schemas.active_players import ActivePlayers as ActivePlayersSchema, ActivePlayersCreate
+from core.dependencies import get_db
 
 active_players_router = APIRouter(prefix="/active_players", tags=["active_players"])
 

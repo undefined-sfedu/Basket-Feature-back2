@@ -1,7 +1,7 @@
 import hashlib
 from sqlalchemy.orm import Session
-from app.core.models import Users
-from app.core.schemas.user import UserCreate
+from core.models import Users
+from core.schemas.user import UserCreate
 
 
 def get_user(db: Session, user_id: int):

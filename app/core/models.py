@@ -1,7 +1,7 @@
 from sqlalchemy import ARRAY, Boolean, CHAR, Column, DateTime, ForeignKey, Identity, Integer, SmallInteger, String, text
 from sqlalchemy.dialects.postgresql import INT4RANGE
 from sqlalchemy.orm import relationship
-from app.core.database import Base
+from core.database import Base
 
 
 class AttackTypes(Base):

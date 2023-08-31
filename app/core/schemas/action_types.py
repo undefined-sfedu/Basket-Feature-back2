@@ -1,6 +1,6 @@
 from pydantic import BaseModel
 
-from app.core.schemas.dicts import PlayType, ResultType, FaulType, Dictionary
+from core.schemas.dicts import PlayType, ResultType, FaulType, Dictionary
 
 
 class ThrowCreate(BaseModel):

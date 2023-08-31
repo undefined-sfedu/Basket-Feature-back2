@@ -1,7 +1,7 @@
 from fastapi import Depends, APIRouter
-from app.core.crud.possessions_operations import *
-from app.core.schemas.possessions import Possessions as PossessionsSchema
-from app.core.dependencies import get_db
+from core.crud.possessions_operations import *
+from core.schemas.possessions import Possessions as PossessionsSchema
+from core.dependencies import get_db
 
 possessions_router = APIRouter(prefix="/possessions", tags=["possessions"])
 

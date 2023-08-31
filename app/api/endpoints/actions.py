@@ -1,7 +1,7 @@
 from fastapi import Depends, APIRouter
-from app.core.crud.action_operations import *
-from app.core.schemas.action import Action as ActionSchema
-from app.core.dependencies import get_db
+from core.crud.action_operations import *
+from core.schemas.action import Action as ActionSchema
+from core.dependencies import get_db
 
 
 actions_router = APIRouter(prefix="/actions", tags=["actions"])

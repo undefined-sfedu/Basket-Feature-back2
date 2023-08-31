@@ -1,6 +1,6 @@
 from sqlalchemy.orm import Session
-from app.core.models import Possessions
-from app.core.schemas.possessions import PossessionsCreate
+from core.models import Possessions
+from core.schemas.possessions import PossessionsCreate
 
 
 def get_possessions(db: Session, skip: int = 0, limit: int = 100):

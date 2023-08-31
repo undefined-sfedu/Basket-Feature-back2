@@ -1,9 +1,9 @@
 from fastapi import Depends, APIRouter
 
-from app.core.crud.team_operations import *
-from app.core.dependencies import get_db
-from app.core.schemas.player import Player as PlayerSchema
-from app.core.schemas.team import Team as TeamSchema
+from core.crud.team_operations import *
+from core.dependencies import get_db
+from core.schemas.player import Player as PlayerSchema
+from core.schemas.team import Team as TeamSchema
 
 team_router = APIRouter(prefix="/teams", tags=["teams"])
 

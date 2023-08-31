@@ -1,6 +1,6 @@
 from sqlalchemy.orm import Session
-from app.core.models import Players
-from app.core.schemas.player import PlayerCreate
+from core.models import Players
+from core.schemas.player import PlayerCreate
 
 
 def get_players(db: Session, skip: int = 0, limit: int = 100):

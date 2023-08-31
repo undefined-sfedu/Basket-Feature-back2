@@ -1,6 +1,6 @@
 from sqlalchemy.orm import Session
-from app.core.models import Actions
-from app.core.schemas.action import ActionCreate
+from core.models import Actions
+from core.schemas.action import ActionCreate
 
 
 def get_actions(db: Session, skip: int = 0, limit: int = 100):

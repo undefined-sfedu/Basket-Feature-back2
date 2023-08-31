@@ -1,7 +1,7 @@
 from fastapi import Depends, APIRouter
-from app.core.crud.action_types_operations import *
-from app.core.schemas.action_types import Throw as ThrowSchema, Faul as FaulSchema, Loss as LossSchema
-from app.core.dependencies import get_db
+from core.crud.action_types_operations import *
+from core.schemas.action_types import Throw as ThrowSchema, Faul as FaulSchema, Loss as LossSchema
+from core.dependencies import get_db
 
 
 action_types_router = APIRouter(prefix="/action_types", tags=["action_types"])

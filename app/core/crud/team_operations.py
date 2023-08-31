@@ -1,6 +1,6 @@
 from sqlalchemy.orm import Session
-from app.core.models import Teams
-from app.core.schemas.team import TeamCreate
+from core.models import Teams
+from core.schemas.team import TeamCreate
 
 
 def get_teams(db: Session, skip: int = 0, limit: int = 100):

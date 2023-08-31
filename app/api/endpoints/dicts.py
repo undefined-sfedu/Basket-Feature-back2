@@ -1,10 +1,10 @@
 from fastapi import Depends, APIRouter
 from sqlalchemy.orm import Session
-from app.core.crud.dicts_operations import get_loss_dict, get_faul_dict, get_time_dict, get_result_dict, \
+from core.crud.dicts_operations import get_loss_dict, get_faul_dict, get_time_dict, get_result_dict, \
     get_time_type_dict, get_play_type_dict, get_attack_type_dict, get_start_attack_dict
-from app.core.schemas.dicts import *
-from app.core.schemas.action_types import Loss
-from app.core.dependencies import get_db
+from core.schemas.dicts import *
+from core.schemas.action_types import Loss
+from core.dependencies import get_db
 
 
 dicts_router = APIRouter(prefix="/dicts", tags=["dicts"])

@@ -1,5 +1,5 @@
 from sqlalchemy.orm import Session
-from app.core.models import LossDict, TimeDict, TimeTypeDict, ResultDict, PlayTypeDict, StartAttackDict, FaulTypes, \
+from core.models import LossDict, TimeDict, TimeTypeDict, ResultDict, PlayTypeDict, StartAttackDict, FaulTypes, \
     AttackTypes
 
 
